@@ -5,8 +5,6 @@
 ![ForTheBadge built-by-developers](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)<space><space>
 ![ForTheBadge built-by-developers](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white)
 <space><space>
-![ForTheBadge built-by-developers](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-<space><space>
 ![ForTheBadge built-by-developers](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)
 <space><space>
 ![ForTheBadge built-by-developers](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
