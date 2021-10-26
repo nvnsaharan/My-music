@@ -5,7 +5,7 @@ const music = [
         Name: "Purple Haze",
         Singer: "Jimi Hendrix",
         album: "Woodstock",
-        src: "https://upload.wikimedia.org/wikipedia/commons/1/15/Bicycle-bell.wav",
+        src: "https://github.com/nvnsaharan/My-music/blob/main/src/music/Suncrown%20-%20Legend%20of%20the%20Forgotten%20Centuries.mp3",
     },
 ];
 
