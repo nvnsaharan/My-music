@@ -10,7 +10,7 @@
 /* Background */
 .slider-container::before {
     content: "";
-    background-color: rgba(211, 211, 211, 0.582);
+    background-color: #dedde3;
     width: 99%;
     height: calc(var(--progress-bar-height) - 1px);
     display: block;
@@ -21,7 +21,9 @@
     transform: translate(-50%, -50%);
     pointer-events: none;
     border: 3px solid white;
-    box-shadow: 1px 1px 2px #bebebe, -1px -1px 2px #ffffff;
+    box-shadow: -3px -3px 5px #ffffff, 3px 3px 5px rgba(0, 0, 0, 0.05),
+        inset 3px 3px 5px rgba(0, 0, 0, 0.05), inset -3px -3px 5px #ffffff;
+    border-radius: 37px;
 }
 
 /* Custom Progress Bar */
@@ -37,6 +39,7 @@
     z-index: 1;
     user-select: none;
     pointer-events: none;
+    border-radius: 37px;
     box-shadow: -2px -2px 0.5px lightgray, -2px -2px 0.5px gray;
 }
 
@@ -93,7 +96,6 @@
     transform: translate(0%, -50%);
     pointer-events: none; /* Remove pointer events on thumb so user can click on the actual thumb beaneath it!  */
     user-select: none;
-
     box-shadow: 2px 2px 5px #bebebe, -2px -2px 5px #ffffff8f;
 }
 

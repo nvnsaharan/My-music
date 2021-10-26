@@ -23,7 +23,7 @@ function Slider({ percentage = 0, onChange, duration, currentTime }) {
     }, [percentage]);
 
     function secondsToHms(seconds) {
-        if (!seconds) return "00m 00s";
+        if (!seconds) return "00:00";
 
         let duration = seconds;
         let hours = duration / 3600;
@@ -43,7 +43,7 @@ function Slider({ percentage = 0, onChange, duration, currentTime }) {
 
         if (parseInt(hours, 10) > 0) {
             return `${parseInt(hours, 10)}h ${min}m ${sec}s`;
-        } else if (min == 0) {
+        } else if (min === 0) {
             return `00:${sec}`;
         } else {
             return `${min}:${sec}`;

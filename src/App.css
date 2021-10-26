@@ -13,20 +13,25 @@
     align-items: center;
 }
 .top_div {
-    background-color: white;
+    width: 390px;
+    height: 230px;
+
+    background: #f8f8f8;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    box-shadow: 20px 15px 40px rgba(54, 48, 116, 0.3);
+    border-radius: 30px;
     padding: 20px;
-    border-radius: 20px;
-    width: 350px;
-    height: 200px;
+
     display: flex;
     align-items: center;
     z-index: 1;
     justify-content: space-between;
-    box-shadow: 23px 23px 46px #b8b2ddc9, -10px -10px 16px #ffffff57;
 }
 .music_image_div {
-    height: 150px;
-    width: 150px;
+    width: 180px;
+    height: 180px;
+    background: #f8f8f8;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -40,9 +45,10 @@
         -2px -2px 3px 0 rgb(255 255 255 / 20%);
 }
 .music_image {
-    height: 130px;
-    width: 130px;
-    border-radius: 16px;
+    width: 165px;
+    height: 165px;
+
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,8 +69,8 @@
     padding: 0px 10px;
 }
 .music_status {
-    font-size: 10px;
-    color: gray;
+    font-size: 9px;
+    color: rgb(179, 179, 179);
 }
 .music_name {
     font-size: 18px;
@@ -104,7 +110,7 @@
 }
 .music_contols {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-bottom: 30px;
     align-items: center;
 }
@@ -113,18 +119,15 @@
     color: lightgray;
     font-size: 18px !important;
     cursor: pointer;
+    border-radius: 50%;
 }
 
 .icon_border {
-    background: linear-gradient(
-        135deg,
-        rgba(100, 62, 62, 0.08),
-        rgba(255, 255, 255, 0.25)
-    );
-    box-shadow: 3px 3px 4px 0 rgb(0 0 0 / 25%),
-        -2px -2px 3px 0 rgb(255 255 255 / 30%);
     border-radius: 50%;
     padding: 5px;
+    background: #f8f8f8;
+    box-shadow: -5px -5px 8px #ffffff, 5px 5px 5px rgba(0, 0, 0, 0.05),
+        inset 5px 5px 5px rgba(0, 0, 0, 0.05), inset -5px -5px 10px #ffffff;
 }
 
 .play_button {
@@ -140,4 +143,19 @@
     border-radius: 50% !important;
     min-width: 0px !important;
     color: #8878d1 !important;
+}
+
+@media screen and (max-width: 480px) {
+    .music_player {
+        flex-direction: column;
+    }
+    .top_div {
+        width: 98%;
+    }
+    .bottom_div {
+        padding: 20px;
+        height: 150px;
+        width: 75%;
+        border-radius: 0 0 20px 20px;
+    }
 }

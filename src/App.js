@@ -4,6 +4,7 @@ import musiclist from "./music";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
+import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
 import ShareIcon from "@mui/icons-material/Share";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
@@ -17,14 +18,21 @@ import EqualizerIcon from "@mui/icons-material/Equalizer";
 import Button from "@mui/material/Button";
 import Slider from "./components/slider/Slider";
 
+import song1 from "./music/Suncrown - Legend of the Forgotten Centuries.mp3";
+import song2 from "./music/song2.mpeg";
+import song3 from "./music/song3.mp4";
+
 function App() {
+    const songarray = [song1, song2, song3];
     const [number, setNumber] = useState(0);
     const [music, setMusic] = useState("");
     const [like, setLike] = useState(false);
     const [suffle, setSuffle] = useState(false);
+    const [song, setSong] = useState(song1);
 
     const [percentage, setPercentage] = useState(0);
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(true);
+    const [isadded, setIsadded] = useState(false);
     const [duration, setDuration] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
 
@@ -63,7 +71,13 @@ function App() {
     };
 
     useEffect(() => {
-        setMusic(musiclist[number]);
+        setMusic(musiclist[number % musiclist.length]);
+        setSong(songarray[number % songarray.length]);
+        setPercentage(0);
+        setIsPlaying(!isPlaying);
+        setTimeout(() => {
+            play();
+        }, 500);
     }, [number]);
     return (
         <div className="App">
@@ -98,7 +112,17 @@ function App() {
                                 )}
                             </Button>
                             <Button className="icon_buttons">
-                                <PlaylistAddIcon className="icons icon_border" />
+                                {isadded ? (
+                                    <PlaylistAddCheckIcon
+                                        onClick={() => setIsadded(!isadded)}
+                                        className="main_button icons icon_border"
+                                    />
+                                ) : (
+                                    <PlaylistAddIcon
+                                        onClick={() => setIsadded(!isadded)}
+                                        className="icons icon_border"
+                                    />
+                                )}
                             </Button>
                             <Button className="icon_buttons">
                                 <ShareIcon className="icons icon_border" />
@@ -126,11 +150,19 @@ function App() {
                             <RepeatOneIcon className="icons" />
                         </Button>
                         <Button className="icon_buttons">
-                            {" "}
-                            <KeyboardArrowLeftIcon className="icons icon_border main_button" />
+                            <KeyboardArrowLeftIcon
+                                onClick={() => {
+                                    if (number === 0) {
+                                        setNumber(2);
+                                    } else {
+                                        setNumber(number - 1);
+                                    }
+                                    play();
+                                }}
+                                className="icons icon_border main_button"
+                            />
                         </Button>
                         <Button className="icon_buttons">
-                            {" "}
                             {isPlaying ? (
                                 <PauseCircleFilledIcon
                                     onClick={() => play()}
@@ -144,7 +176,13 @@ function App() {
                             )}
                         </Button>
                         <Button className="icon_buttons">
-                            <KeyboardArrowRightIcon className="icons icon_border main_button" />
+                            <KeyboardArrowRightIcon
+                                onClick={() => {
+                                    setNumber(number + 1);
+                                    play();
+                                }}
+                                className="icons icon_border main_button"
+                            />
                         </Button>
                         <Button className="icon_buttons">
                             <RepeatIcon className="icons" />
@@ -168,7 +206,7 @@ function App() {
                                     e.currentTarget.duration.toFixed(2)
                                 );
                             }}
-                            src={music.src}
+                            src={song}
                         ></audio>
                     </div>
                 </div>
