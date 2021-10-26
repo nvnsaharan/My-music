@@ -16,42 +16,60 @@
     background-color: white;
     padding: 20px;
     border-radius: 20px;
-    width: 300px;
+    width: 350px;
     height: 200px;
     display: flex;
     align-items: center;
+    z-index: 1;
     justify-content: space-between;
+    box-shadow: 23px 23px 46px #b8b2ddc9, -10px -10px 16px #ffffff57;
 }
 .music_image_div {
-    border: solid black 1px;
-    height: 130px;
-    width: 130px;
+    height: 150px;
+    width: 150px;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(
+        135deg,
+        rgba(100, 62, 62, 0.15),
+        rgba(255, 255, 255, 0.85)
+    );
+    box-shadow: 3px 3px 3px 0 rgb(0 0 0 / 15%),
+        -2px -2px 3px 0 rgb(255 255 255 / 20%);
 }
 .music_image {
-    border: solid black 1px;
-    height: 120px;
-    width: 120px;
-    border-radius: 20px;
+    height: 130px;
+    width: 130px;
+    border-radius: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(
+        135deg,
+        rgba(100, 62, 62, 0.2),
+        rgba(255, 255, 255, 0.25)
+    );
+    box-shadow: 3px 3px 8px 0 rgb(0 0 0 / 25%),
+        -2px -2px 3px 0 rgb(255 255 255 / 20%);
 }
 .music_details {
-    width: 150px;
+    width: 140px;
     height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 0px 10px;
 }
-
+.music_status {
+    font-size: 10px;
+    color: gray;
+}
 .music_name {
     font-size: 18px;
     font-weight: 700;
-    color: rgb(44, 92, 141);
+    color: #5d528fd2;
     margin: 0;
 }
 .music_singer {
@@ -75,19 +93,22 @@
     background-color: white;
     padding: 20px;
     height: 150px;
-    width: 300px;
+    width: 400px;
     border-radius: 0 20px 20px 0;
-    max-width: 300px;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    box-shadow: 23px 23px 46px #b8b2ddc9, -10px -10px 16px #ffffff57;
 }
 .music_contols {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 30px;
     align-items: center;
 }
+
 .icons {
     color: lightgray;
     font-size: 18px !important;
@@ -109,6 +130,14 @@
 .play_button {
     font-size: 35px !important;
 }
+
 .main_button {
     color: #8878d1;
+}
+.icon_buttons {
+    display: flex !important;
+    padding: 0px !important;
+    border-radius: 50% !important;
+    min-width: 0px !important;
+    color: #8878d1 !important;
 }

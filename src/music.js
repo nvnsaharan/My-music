@@ -5,6 +5,7 @@ const music = [
         Name: "Purple Haze",
         Singer: "Jimi Hendrix",
         album: "Woodstock",
+        src: "https://upload.wikimedia.org/wikipedia/commons/1/15/Bicycle-bell.wav",
     },
 ];
 
