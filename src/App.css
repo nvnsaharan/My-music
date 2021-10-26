@@ -6,8 +6,6 @@
     align-items: center;
 }
 .music_player {
-    padding: 20px;
-    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,7 +109,7 @@
 .music_contols {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     align-items: center;
 }
 
@@ -148,14 +146,29 @@
 @media screen and (max-width: 480px) {
     .music_player {
         flex-direction: column;
+        width: 100%;
     }
     .top_div {
-        width: 98%;
+        width: 95%;
+        padding: 10px;
+        height: 200px;
     }
     .bottom_div {
         padding: 20px;
-        height: 150px;
+        height: 130px;
         width: 75%;
         border-radius: 0 0 20px 20px;
+        min-width: 0;
+        transform: translateY(-10px);
+    }
+    .music_image {
+        width: 140px;
+        height: 140px;
+        border-radius: 15px;
+    }
+    .music_image_div {
+        width: 160px !important;
+        height: 160px !important;
+        border-radius: 20px;
     }
 }
